@@ -1,0 +1,17 @@
+queues:
+    resize: resize
+    upload: upload
+    done: done
+    failed: failed
+
+resizer:
+    width: 640
+    height: 640
+    bg-color: '#000000' # what colour to use for background if image is not fit new ratio
+    delete-origin: false
+
+storage:
+    type: amazon-s3  # can be: amazon-s3 for Amazon S3 storage, g-drive for Google Drive, dropbox for Dropbox
+    credentials:
+        id: ~
+        sercret: ~
