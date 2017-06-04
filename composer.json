@@ -18,7 +18,8 @@
         "symfony/console": "^3.3",
         "symfony/yaml": "^3.3",
         "symfony/finder": "^3.3",
-        "imagine/imagine": "^0.7.1"
+        "imagine/imagine": "^0.7.1",
+        "php-amqplib/php-amqplib": "^2.6"
     },
     "autoload": {
         "psr-4": {

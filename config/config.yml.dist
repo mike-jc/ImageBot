@@ -1,8 +1,13 @@
 queues:
-    resizer: resize
-    storage: upload
-    success: done
-    failure: failed
+    host: localhost
+    port: 5672
+    user: admin
+    password: admin
+    names:
+        resizer: resize
+        storage: upload
+        success: done
+        failure: failed
 
 resizer:
     side: 640

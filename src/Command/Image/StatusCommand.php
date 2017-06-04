@@ -27,7 +27,8 @@ EOF
         $output->writeln("Queue\t Count");
 
         foreach ($qManager->getAllQueues() as $qName => $queue) {
-            $output->writeln("$qName\t ". $qManager->getQueueLength($queue));
+            $len = !is_null($len = $qManager->getQueueLength($queue)) ? $len : '?';
+            $output->writeln("$qName\t $len");
         }
     }
 }
