@@ -7,16 +7,35 @@ The workflow should be divided into the following independent steps:
 - Upload resized image to cloud storage.
 
 ## Installation
-Via composer:
+
+#### Via composer
 ```
 $ php composer require mike-jc/ImageBot
 ```
-Or as a docker image:
+
+#### Or as a Docker image
 ```
 $ mkdir sandbox && cd sandbox
 $ curl -sS https://raw.githubusercontent.com/mike-jc/ImageBot/master/Dockerfile > Dockerfile 
 $ docker build -t bots/image-bot .
-$ docker run -it --volume=<images-directory>:/images --workdir="/images" bots/image-bot
+$ docker run -it --volume=<absolute-path-to-images-directory>:/images --workdir="/images" --entrypoint=/bin/bash bots/image-bot
+```
+After that Docker container will run and you will get into it.
+
+In the running docker container:
+```
+$ vim /home/ImageBot/config/config.yml
+
+... edit configuration (at least, add cloud storage credentials)
+
+$ /etc/init.d/rabbitmq-server start
+
+... now you're in images directory, so:
+
+$ bot schedule ./ 
+$ bot resize
+
+... use any other bot command you want
 ```
 
 ## Configuration

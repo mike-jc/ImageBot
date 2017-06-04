@@ -1,8 +1,8 @@
 queues:
     host: localhost
     port: 5672
-    user: admin
-    password: admin
+    user: guest
+    password: guest
     names:
         resize: resize
         upload: upload
