@@ -19,6 +19,7 @@ class Manager implements ManagerInterface {
      */
     public function __construct(array $config) {
         $type = !empty($config['type']) ? $config['type'] : self::DEFAULT_TYPE;
+        $parameters = !empty($config['parameters']) ? $config['parameters'] : [];
         $credentials = !empty($config['credentials']) ? $config['credentials'] : [];
 
         if (!$credentials) {
@@ -26,6 +27,7 @@ class Manager implements ManagerInterface {
         }
 
         $this->uploader = $this->initUploader($type);
+        $this->uploader->init($parameters);
         $this->uploader->auth($credentials);
     }
 
