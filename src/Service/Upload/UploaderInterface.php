@@ -15,7 +15,7 @@ interface UploaderInterface {
     public function init(array $credentials, array $parameters = []);
 
     /**
-     * @param $file
+     * @param string $file
      * @throws Exception\RunTimeException
      */
     public function upload($file);

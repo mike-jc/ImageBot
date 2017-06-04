@@ -33,8 +33,7 @@ class GDriveUploader implements UploaderInterface {
     }
 
     /**
-     * @param $file
-     * @throws Exception\RunTimeException
+     * @param string $file
      */
     public function upload($file) {
         $metadata = new \Google_Service_Drive_DriveFile([

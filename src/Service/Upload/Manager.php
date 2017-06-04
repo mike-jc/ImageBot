@@ -31,7 +31,7 @@ class Manager implements ManagerInterface {
     }
 
     /**
-     * @param $file
+     * @param string $file
      * @return string
      */
     public function upload($file) {

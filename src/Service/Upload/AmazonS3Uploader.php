@@ -29,7 +29,7 @@ class AmazonS3Uploader implements UploaderInterface {
      */
     public function init(array $credentials, array $parameters = []) {
         if (empty($credentials['key']) || empty($credentials['secret'])) {
-            throw new Exception\AuthException('You must provide credentials (key and secret) for Amazon S3 service');
+            throw new Exception\AuthException('You must provide credentials (key and secret) for Amazon S3 API');
         }
 
         $this->region = !empty($credentials['region']) ? $credentials['region'] : null;
@@ -46,8 +46,7 @@ class AmazonS3Uploader implements UploaderInterface {
     }
 
     /**
-     * @param $file
-     * @throws Exception\RunTimeException
+     * @param string $file
      */
     public function upload($file) {
         $this->createBucketIfNeeded();

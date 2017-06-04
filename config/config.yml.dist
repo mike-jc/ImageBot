@@ -15,19 +15,20 @@ resizer:
     delete-origin: true
 
 storage:
-    type: g-drive  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
+    type: dropbox # Dropbox storage
     credentials:
-        config-file: ~  # file with credentials in JSON for service account (not for web client!)
+        key: ~
+        secret: ~
+        access-token: ~
     ### or
-    #type: amazon-s3  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
+    #type: g-drive  # Google Drive storage
+    #credentials:
+    #    config-file: ~  # file with credentials in JSON for service account (not for web client!)
+    ### or
+    #type: amazon-s3  # Amazon S3 storage
     #parameters:
     #    region: ~
     #    bucket-name: ~ # by default: `default-bucket`
-    #credentials:
-    #    key: ~
-    #    sercret: ~
-    ### or
-    #type: dropbox  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
     #credentials:
     #    key: ~
     #    sercret: ~
