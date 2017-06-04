@@ -3,7 +3,7 @@
 <?php
 
 /** @var App\Application $app */
-$app = require_once __DIR__ . '/app/bootstrap.php';
+$app = require_once __DIR__ . '/../app/bootstrap.php';
 
 $app->setName('Image Processor Bot');
 

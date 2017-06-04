@@ -43,6 +43,7 @@ EOF
             try {
                 $successfulFiles[] = $resizer->resize($file);
             } catch (\Exception $e) {
+                $output->writeln($e->getMessage());
                 $failedFiles[] = $file;
             }
         }

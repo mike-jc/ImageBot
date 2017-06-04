@@ -3,16 +3,15 @@
 namespace App\Service\Resize;
 
 use App\Exception;
+use App\Helper\ImageTrait;
 
 class ResizerService implements ResizerInterface {
+    use ImageTrait;
+
     /**
      * @var int
      */
-    private $width;
-    /**
-     * @var int
-     */
-    private $height;
+    private $side;
     /**
      * @var string
      */
@@ -31,13 +30,12 @@ class ResizerService implements ResizerInterface {
      * @throws Exception\ConfigException
      */
     public function __construct(array $config = []) {
-        $this->width = !empty($config['width']) ? (int)$config['width'] : self::DEFAULT_SIZE;
-        $this->height = !empty($config['height']) ? (int)$config['height'] : self::DEFAULT_SIZE;
+        $this->side = !empty($config['side']) ? (int)$config['side'] : self::DEFAULT_SIZE;
         $this->bgColor = !empty($config['bg-color']) ? $config['bg-color'] : self::DEFAULT_COLOR;
         $this->delOrigin = isset($config['delete-origin']) ? $config['delete-origin'] : true;
 
-        if (!$this->width || !$this->height) {
-            throw new Exception\ConfigException("Wrong target size for image. It must be non-negative integer value");
+        if (!$this->side) {
+            throw new Exception\ConfigException("Wrong target size for image. It must be a non-negative integer value");
         }
     }
 
@@ -52,15 +50,21 @@ class ResizerService implements ResizerInterface {
         }
 
         $targetDir = $this->getTargetDirectory($file);
-        $fileName = basename($file);
+        $fileName = pathinfo($file, PATHINFO_FILENAME) .'.jpg';
+        $targetFile = "$targetDir/$fileName";
 
-        // TODO: resize
+        try {
+            $this->resizeImage($this->openImage($file), $this->side, $this->bgColor)
+                 ->save($targetFile);
+        } catch (\Exception $e) {
+            throw new Exception\RunTimeException($e->getMessage(), $e->getCode());
+        }
 
         if ($this->delOrigin) {
             unlink($file);
         }
 
-        return "$targetDir/$fileName";
+        return $targetFile;
     }
 
     /**

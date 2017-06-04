@@ -5,9 +5,8 @@ queues:
     failure: failed
 
 resizer:
-    width: 640
-    height: 640
-    bg-color: '#000000' # what colour to use for background if image is not fit new ratio
+    side: 640
+    bg-color: '#ffffff' # what colour to use for background if image is not fit new ratio
     delete-origin: true
 
 storage:
