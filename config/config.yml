@@ -17,5 +17,4 @@ resizer:
 storage:
     type: g-drive  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
     credentials:
-        id: ~
-        sercret: ~
+        config-file: D:\Lightsoft\home\sandbox\24sessions-mike-1bdf850dc919.json

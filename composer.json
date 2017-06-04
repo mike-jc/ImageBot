@@ -20,7 +20,8 @@
         "symfony/finder": "^3.3",
         "imagine/imagine": "^0.7.1",
         "php-amqplib/php-amqplib": "^2.6",
-        "aws/aws-sdk-php": "^3.28"
+        "aws/aws-sdk-php": "^3.28",
+        "google/apiclient": "^2.1"
     },
     "autoload": {
         "psr-4": {

@@ -17,8 +17,7 @@ resizer:
 storage:
     type: g-drive  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
     credentials:
-        key: ~
-        sercret: ~
+        config-file: ~  # file with credentials in JSON for service account (not for web client!)
     ### or
     #type: amazon-s3  # can be: amazon-s3 for Amazon S3 storage, dropbox for Dropbox, g-drive for Google Drive
     #parameters:

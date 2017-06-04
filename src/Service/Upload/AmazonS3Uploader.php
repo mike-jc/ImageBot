@@ -23,23 +23,17 @@ class AmazonS3Uploader implements UploaderInterface {
     private $bucketName;
 
     /**
-     * @param array $parameters
-     * @throws Exception\ConfigException
-     */
-    public function init(array $parameters = []) {
-        $this->region = !empty($credentials['region']) ? $credentials['region'] : null;
-        $this->bucketName = !empty($credentials['bucket-name']) ? $credentials['bucket-name'] : self::DEFAULT_BUCKET;
-    }
-
-    /**
      * @param array $credentials
+     * @param array $parameters
      * @throws Exception\AuthException
      */
-    public function auth(array $credentials) {
+    public function init(array $credentials, array $parameters = []) {
         if (empty($credentials['key']) || empty($credentials['secret'])) {
             throw new Exception\AuthException('You must provide credentials (key and secret) for Amazon S3 service');
         }
 
+        $this->region = !empty($credentials['region']) ? $credentials['region'] : null;
+        $this->bucketName = !empty($credentials['bucket-name']) ? $credentials['bucket-name'] : self::DEFAULT_BUCKET;
         $this->s3Client = new S3Client([
             'region' => $this->region,
             'version' => 'latest',

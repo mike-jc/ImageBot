@@ -7,19 +7,13 @@ use App\Exception;
 class DropboxUploader implements UploaderInterface {
 
     /**
+     * @param array $credentials
      * @param array $parameters
      * @throws Exception\ConfigException
-     */
-    public function init(array $parameters = []) {
-        // TODO: Implement init() method.
-    }
-
-    /**
-     * @param array $credentials
      * @throws Exception\AuthException
      */
-    public function auth(array $credentials) {
-        // TODO: Implement auth() method.
+    public function init(array $credentials, array $parameters = []) {
+        // TODO: Implement init() method.
     }
 
     /**

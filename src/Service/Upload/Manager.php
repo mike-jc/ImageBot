@@ -27,8 +27,7 @@ class Manager implements ManagerInterface {
         }
 
         $this->uploader = $this->initUploader($type);
-        $this->uploader->init($parameters);
-        $this->uploader->auth($credentials);
+        $this->uploader->init($credentials, $parameters);
     }
 
     /**

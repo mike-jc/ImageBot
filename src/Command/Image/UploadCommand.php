@@ -43,6 +43,7 @@ EOF
             try {
                 $successfulFiles[] = $uploadManager->upload($file);
             } catch (\Exception $e) {
+                $output->writeln($e->getMessage());
                 $failedFiles[] = $file;
             }
         }

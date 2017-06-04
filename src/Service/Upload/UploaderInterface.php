@@ -7,16 +7,12 @@ use App\Exception;
 interface UploaderInterface {
 
     /**
+     * @param array $credentials
      * @param array $parameters
      * @throws Exception\ConfigException
-     */
-    public function init(array $parameters = []);
-
-    /**
-     * @param array $credentials
      * @throws Exception\AuthException
      */
-    public function auth(array $credentials);
+    public function init(array $credentials, array $parameters = []);
 
     /**
      * @param $file
