@@ -11,7 +11,7 @@ queues:
 
 resizer:
     side: 640
-    bg-color: '#ffffff' # what colour to use for background if image is not fit new ratio
+    bg-color: '#ffffff' # what colour to use for background if image does not fit new ratio
     delete-origin: false
 
 storage:

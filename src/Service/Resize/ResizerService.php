@@ -73,7 +73,7 @@ class ResizerService implements ResizerInterface {
      * @throws Exception\RunTimeException
      */
     protected function getTargetDirectory($file) {
-        $targetDir = dirname($file) . ' resized';
+        $targetDir = dirname($file) . '_resized';
 
         if (!isset($this->checkedDirs[$targetDir])) {
             if (!file_exists($targetDir)) {

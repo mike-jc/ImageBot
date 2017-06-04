@@ -4,14 +4,14 @@ queues:
     user: admin
     password: admin
     names:
-        resizer: resize
-        storage: upload
-        success: done
-        failure: failed
+        resize: resize
+        upload: upload
+        done: done
+        failed: failed
 
 resizer:
     side: 640
-    bg-color: '#ffffff' # what colour to use for background if image is not fit new ratio
+    bg-color: '#ffffff' # what colour to use for background if image does not fit new ratio
     delete-origin: true
 
 storage:
