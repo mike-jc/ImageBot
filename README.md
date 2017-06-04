@@ -13,6 +13,10 @@ $ php composer require mike-jc/ImageBot
 ```
 Or as a docker image:
 ```
+$ mkdir sandbox && cd sandbox
+$ curl -sS https://raw.githubusercontent.com/mike-jc/ImageBot/master/Dockerfile > Dockerfile 
+$ docker build -t bots/image-bot .
+$ docker run -it --volume=<images-directory>:/images --workdir="/images" bots/image-bot
 ```
 
 ## Configuration

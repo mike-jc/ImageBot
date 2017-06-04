@@ -10,7 +10,8 @@ ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get update \
     && apt-get install -y --allow-unauthenticated \
         git \
-	php5-gd \
+	    php5-gd \
+	    rabbitmq-server \
         unzip \
         zip \
     && docker-php-ext-install bcmath \
@@ -20,8 +21,9 @@ RUN apt-get update \
     && echo 'extension=/usr/lib/php5/20131226/gd.so' >> /usr/local/etc/php/php.ini \
     && echo 'extension=bcmath.so' >> /usr/local/etc/php/php.ini
 
-RUN git clone git@github.com:mike-jc/ImageBot.git ImageBot
+RUN git clone https://github.com/mike-jc/ImageBot.git ImageBot
     && cd ImageBot
+
 RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-interaction --no-scripts
 
 RUN chmod 755 bin/bot
