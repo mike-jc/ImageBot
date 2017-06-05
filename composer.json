@@ -1,5 +1,5 @@
 {
-    "name": "mike-jc/ImageBot",
+    "name": "mike-jc/image-bot",
     "description": "Bot that resizes and upload images to the storage",
     "keywords": ["cli", "resize", "cloud storage", "queues"],
     "version": "1.0.0",

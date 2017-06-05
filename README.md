@@ -11,7 +11,7 @@ The workflow should be divided into the following independent steps:
 #### Via composer
 Run:
 ```
-$ php composer require mike-jc/ImageBot
+$ php composer require mike-jc/image-bot
 ```
 After that you can use any other bot command you want:
 ```
