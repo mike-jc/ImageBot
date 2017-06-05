@@ -15,9 +15,9 @@ $ php composer require mike-jc/image-bot
 ```
 After that you can use any other bot command you want:
 ```
-$ php vendor/bin schedule ./images
-$ php vendor/bin resize -n 10
-$ php vendor/bin upload
+$ php vendor/bin/bot schedule ./images
+$ php vendor/bin/bot resize -n 10
+$ php vendor/bin/bot upload
 ```
 
 #### Or as a Docker image
