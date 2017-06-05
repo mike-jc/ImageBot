@@ -9,11 +9,19 @@ The workflow should be divided into the following independent steps:
 ## Installation
 
 #### Via composer
+Run:
 ```
 $ php composer require mike-jc/ImageBot
 ```
+After that you can use any other bot command you want:
+```
+$ php vendor/bin schedule ./images
+$ php vendor/bin resize -n 10
+$ php vendor/bin upload
+```
 
 #### Or as a Docker image
+Run the following commands:
 ```
 $ mkdir sandbox && cd sandbox
 $ curl -sS https://raw.githubusercontent.com/mike-jc/ImageBot/master/Dockerfile > Dockerfile 

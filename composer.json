@@ -29,6 +29,9 @@
             "": "src/"
         }
     },
+    "bin": [
+        "bin/bot"
+    ],
     "config": {
         "optimize-autoloader": true
     }
